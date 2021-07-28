@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+message Void {}
+
+service ProdutoService {
+    rpc List (Void) returns (ProdutoList);
+}
+
+service PedidoService {
+    rpc Pedido (ProdutoList) returns (PedidoResponse);
+}
+
+message PedidoResponse {
+    string id = 1;
+    string status = 2;
+}
+
+message ProdutoId {
+    string id = 1;
+}
+
+message Produto {
+    string id = 1;
+    string nome = 2;
+    float preco = 3;
+    int32 quantidade = 4;
+}
+
+message ProdutoList {
+    repeated Produto produtos = 1;
+}
