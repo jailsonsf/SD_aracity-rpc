@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0cpedido.proto\"\x06\n\x04Void\",\n\x0ePedidoResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\"\x17\n\tProdutoId\x12\n\n\x02id\x18\x01 \x01(\t\"F\n\x07Produto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04nome\x18\x02 \x01(\t\x12\r\n\x05preco\x18\x03 \x01(\x02\x12\x12\n\nquantidade\x18\x04 \x01(\x05\")\n\x0bProdutoList\x12\x1a\n\x08produtos\x18\x01 \x03(\x0b\x32\x08.Produto2-\n\x0eProdutoService\x12\x1b\n\x04List\x12\x05.Void\x1a\x0c.ProdutoList28\n\rPedidoService\x12\'\n\x06Pedido\x12\x0c.ProdutoList\x1a\x0f.PedidoResponseb\x06proto3'
+  serialized_pb=b'\n\x0cpedido.proto\"\x06\n\x04Void\"F\n\x07Produto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04nome\x18\x02 \x01(\t\x12\r\n\x05preco\x18\x03 \x01(\x02\x12\x12\n\nquantidade\x18\x04 \x01(\x05\")\n\x0bProdutoList\x12\x1a\n\x08produtos\x18\x01 \x03(\x0b\x32\x08.Produto\"/\n\rPedidoProduto\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nquantidade\x18\x02 \x01(\x05\"1\n\nPedidoList\x12#\n\x0bid_produtos\x18\x01 \x03(\x0b\x32\x0e.PedidoProduto\"H\n\x0ePedidoResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0b\n\x03msg\x18\x03 \x01(\t\x12\r\n\x05preco\x18\x04 \x01(\x02\x32U\n\x0eProdutoService\x12\x1b\n\x04List\x12\x05.Void\x1a\x0c.ProdutoList\x12&\n\x06Pedido\x12\x0b.PedidoList\x1a\x0f.PedidoResponseb\x06proto3'
 )
 
 
@@ -47,77 +47,6 @@ _VOID = _descriptor.Descriptor(
   ],
   serialized_start=16,
   serialized_end=22,
-)
-
-
-_PEDIDORESPONSE = _descriptor.Descriptor(
-  name='PedidoResponse',
-  full_name='PedidoResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='PedidoResponse.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='PedidoResponse.status', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=24,
-  serialized_end=68,
-)
-
-
-_PRODUTOID = _descriptor.Descriptor(
-  name='ProdutoId',
-  full_name='ProdutoId',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='ProdutoId.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=70,
-  serialized_end=93,
 )
 
 
@@ -169,8 +98,8 @@ _PRODUTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=95,
-  serialized_end=165,
+  serialized_start=24,
+  serialized_end=94,
 )
 
 
@@ -201,16 +130,142 @@ _PRODUTOLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=167,
-  serialized_end=208,
+  serialized_start=96,
+  serialized_end=137,
+)
+
+
+_PEDIDOPRODUTO = _descriptor.Descriptor(
+  name='PedidoProduto',
+  full_name='PedidoProduto',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='PedidoProduto.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='quantidade', full_name='PedidoProduto.quantidade', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=139,
+  serialized_end=186,
+)
+
+
+_PEDIDOLIST = _descriptor.Descriptor(
+  name='PedidoList',
+  full_name='PedidoList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id_produtos', full_name='PedidoList.id_produtos', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=188,
+  serialized_end=237,
+)
+
+
+_PEDIDORESPONSE = _descriptor.Descriptor(
+  name='PedidoResponse',
+  full_name='PedidoResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='PedidoResponse.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='PedidoResponse.status', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msg', full_name='PedidoResponse.msg', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='preco', full_name='PedidoResponse.preco', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=239,
+  serialized_end=311,
 )
 
 _PRODUTOLIST.fields_by_name['produtos'].message_type = _PRODUTO
+_PEDIDOLIST.fields_by_name['id_produtos'].message_type = _PEDIDOPRODUTO
 DESCRIPTOR.message_types_by_name['Void'] = _VOID
-DESCRIPTOR.message_types_by_name['PedidoResponse'] = _PEDIDORESPONSE
-DESCRIPTOR.message_types_by_name['ProdutoId'] = _PRODUTOID
 DESCRIPTOR.message_types_by_name['Produto'] = _PRODUTO
 DESCRIPTOR.message_types_by_name['ProdutoList'] = _PRODUTOLIST
+DESCRIPTOR.message_types_by_name['PedidoProduto'] = _PEDIDOPRODUTO
+DESCRIPTOR.message_types_by_name['PedidoList'] = _PEDIDOLIST
+DESCRIPTOR.message_types_by_name['PedidoResponse'] = _PEDIDORESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Void = _reflection.GeneratedProtocolMessageType('Void', (_message.Message,), {
@@ -219,20 +274,6 @@ Void = _reflection.GeneratedProtocolMessageType('Void', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:Void)
   })
 _sym_db.RegisterMessage(Void)
-
-PedidoResponse = _reflection.GeneratedProtocolMessageType('PedidoResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PEDIDORESPONSE,
-  '__module__' : 'pedido_pb2'
-  # @@protoc_insertion_point(class_scope:PedidoResponse)
-  })
-_sym_db.RegisterMessage(PedidoResponse)
-
-ProdutoId = _reflection.GeneratedProtocolMessageType('ProdutoId', (_message.Message,), {
-  'DESCRIPTOR' : _PRODUTOID,
-  '__module__' : 'pedido_pb2'
-  # @@protoc_insertion_point(class_scope:ProdutoId)
-  })
-_sym_db.RegisterMessage(ProdutoId)
 
 Produto = _reflection.GeneratedProtocolMessageType('Produto', (_message.Message,), {
   'DESCRIPTOR' : _PRODUTO,
@@ -248,6 +289,27 @@ ProdutoList = _reflection.GeneratedProtocolMessageType('ProdutoList', (_message.
   })
 _sym_db.RegisterMessage(ProdutoList)
 
+PedidoProduto = _reflection.GeneratedProtocolMessageType('PedidoProduto', (_message.Message,), {
+  'DESCRIPTOR' : _PEDIDOPRODUTO,
+  '__module__' : 'pedido_pb2'
+  # @@protoc_insertion_point(class_scope:PedidoProduto)
+  })
+_sym_db.RegisterMessage(PedidoProduto)
+
+PedidoList = _reflection.GeneratedProtocolMessageType('PedidoList', (_message.Message,), {
+  'DESCRIPTOR' : _PEDIDOLIST,
+  '__module__' : 'pedido_pb2'
+  # @@protoc_insertion_point(class_scope:PedidoList)
+  })
+_sym_db.RegisterMessage(PedidoList)
+
+PedidoResponse = _reflection.GeneratedProtocolMessageType('PedidoResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PEDIDORESPONSE,
+  '__module__' : 'pedido_pb2'
+  # @@protoc_insertion_point(class_scope:PedidoResponse)
+  })
+_sym_db.RegisterMessage(PedidoResponse)
+
 
 
 _PRODUTOSERVICE = _descriptor.ServiceDescriptor(
@@ -257,8 +319,8 @@ _PRODUTOSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=210,
-  serialized_end=255,
+  serialized_start=313,
+  serialized_end=398,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
@@ -270,35 +332,19 @@ _PRODUTOSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
-])
-_sym_db.RegisterServiceDescriptor(_PRODUTOSERVICE)
-
-DESCRIPTOR.services_by_name['ProdutoService'] = _PRODUTOSERVICE
-
-
-_PEDIDOSERVICE = _descriptor.ServiceDescriptor(
-  name='PedidoService',
-  full_name='PedidoService',
-  file=DESCRIPTOR,
-  index=1,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=257,
-  serialized_end=313,
-  methods=[
   _descriptor.MethodDescriptor(
     name='Pedido',
-    full_name='PedidoService.Pedido',
-    index=0,
+    full_name='ProdutoService.Pedido',
+    index=1,
     containing_service=None,
-    input_type=_PRODUTOLIST,
+    input_type=_PEDIDOLIST,
     output_type=_PEDIDORESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_PEDIDOSERVICE)
+_sym_db.RegisterServiceDescriptor(_PRODUTOSERVICE)
 
-DESCRIPTOR.services_by_name['PedidoService'] = _PEDIDOSERVICE
+DESCRIPTOR.services_by_name['ProdutoService'] = _PRODUTOSERVICE
 
 # @@protoc_insertion_point(module_scope)

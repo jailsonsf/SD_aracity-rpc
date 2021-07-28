@@ -4,19 +4,7 @@ message Void {}
 
 service ProdutoService {
     rpc List (Void) returns (ProdutoList);
-}
-
-service PedidoService {
-    rpc Pedido (ProdutoList) returns (PedidoResponse);
-}
-
-message PedidoResponse {
-    string id = 1;
-    string status = 2;
-}
-
-message ProdutoId {
-    string id = 1;
+    rpc Pedido (PedidoList) returns (PedidoResponse);
 }
 
 message Produto {
@@ -28,4 +16,20 @@ message Produto {
 
 message ProdutoList {
     repeated Produto produtos = 1;
+}
+
+message PedidoProduto {
+    string id = 1;
+    int32 quantidade = 2;
+}
+
+message PedidoList {
+    repeated PedidoProduto id_produtos = 1;
+}
+
+message PedidoResponse {
+    string id = 1;
+    string status = 2;
+    string msg = 3;
+    float preco = 4;
 }
